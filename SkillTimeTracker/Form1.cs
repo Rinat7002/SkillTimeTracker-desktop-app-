@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SkillTimeTracker
 {
-    public partial class Form1 : Form
+    public partial class FormApp : Form
     {
 
         bool stopClicked = false;
@@ -25,7 +25,7 @@ namespace SkillTimeTracker
         private int hours;
         string valueTimer = "";
 
-        public Form1()
+        public FormApp()
         {
             InitializeComponent();
             InitializeTimer();
@@ -34,7 +34,7 @@ namespace SkillTimeTracker
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+         
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -71,12 +71,6 @@ namespace SkillTimeTracker
                 TimeSpan time = TimeSpan.FromSeconds(seconds);
                 labelTimer.Text = time.ToString(@"hh\:mm\:ss");
             }
-            //else
-            //{
-            //    seconds = 0;
-            //    minutes = 0;
-            //    hours = 0;
-            //}
         }
 
         private void InitializeTimer()
@@ -88,18 +82,36 @@ namespace SkillTimeTracker
 
         private void btnStartStop_Click(object sender, EventArgs e)
         {
-
-            if (timer1.Enabled) // Если таймер активен (работает)
+            if (rbtnSec.Checked)
             {
-                timer1.Stop(); // Остановить таймер
-                valueTimer = labelTimer.Text;
-                listBox1.Items.Add(valueTimer);
+                if (timer1.Enabled) // Если таймер активен (работает)
+                {
+                    btnStartStop.BackColor = Color.Yellow;
+                    timer1.Stop(); // Остановить таймер
+                    valueTimer = labelTimer.Text;
+                    listBox1.Items.Add(valueTimer);
 
+                }
+                else
+                {
+                    btnStartStop.BackColor = Color.LimeGreen;
+
+                    timer1.Start(); // Возобновить таймер
+                }
             }
-            else
+
+            else if (rbtnTimer.Checked)
             {
-                timer1.Start(); // Возобновить таймер
+                string timerValue = textBoxTimer.Text;
+                labelTimer.Text = timerValue;
+
+                string[] parts = timerValue.Split(':');
+
+                int hourss = int.Parse(parts[0]);
+                int minutess = int.Parse(parts[1]);
+                int secondss = int.Parse(parts[2]);
             }
+            
         }
 
         private void btnStop_Click(object sender, EventArgs e)
@@ -163,10 +175,37 @@ namespace SkillTimeTracker
                 // Доступ к данным выбранного элемента
                 string text = selectedItem.Text; // текст первой колонки
                 string subItemText = selectedItem.SubItems[1].Text; // текст второй колонки (если есть)
-                label6.Text = text + " " + subItemText;
+                label6.Text = text + "\nвремя: " + subItemText;
 
             }
 
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnTimer.Checked == true)
+            {
+                textBoxTimer.Enabled = true;
+            }
+            else
+            {
+                textBoxTimer.Enabled = false;
+            }
+        }
+
+        private void textBoxTimer_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (textBoxTimer.Text == "00:00:00")
+            {
+                textBoxTimer.Clear();
+                textBoxTimer.ForeColor = Color.Black;
+            }
+        }
+
+        private void rbtnSec_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxTimer.Text = "000000";
+            textBoxTimer.ForeColor = Color.Gray;
         }
     }
 }

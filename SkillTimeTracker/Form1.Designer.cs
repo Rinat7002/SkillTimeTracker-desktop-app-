@@ -1,6 +1,6 @@
 ﻿namespace SkillTimeTracker
 {
-    partial class Form1
+    partial class FormApp
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -29,21 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
             "Навык1",
             "1:54:12"}, -1);
             this.btnStartStop = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.listViewSkills = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTimer = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rbtnSec = new System.Windows.Forms.RadioButton();
+            this.rbtnTimer = new System.Windows.Forms.RadioButton();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,39 +52,38 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxTimer = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnStartStop
             // 
-            this.btnStartStop.Location = new System.Drawing.Point(684, 116);
+            this.btnStartStop.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnStartStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStartStop.Font = new System.Drawing.Font("Arial Black", 9.152543F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnStartStop.Location = new System.Drawing.Point(641, 46);
             this.btnStartStop.Name = "btnStartStop";
-            this.btnStartStop.Size = new System.Drawing.Size(91, 23);
+            this.btnStartStop.Size = new System.Drawing.Size(131, 43);
             this.btnStartStop.TabIndex = 0;
             this.btnStartStop.Text = "Start/Pause";
-            this.btnStartStop.UseVisualStyleBackColor = true;
+            this.btnStartStop.UseVisualStyleBackColor = false;
             this.btnStartStop.Click += new System.EventHandler(this.btnStartStop_Click);
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(684, 156);
+            this.btnStop.BackColor = System.Drawing.Color.Red;
+            this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStop.Font = new System.Drawing.Font("Arial Black", 9.762712F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnStop.Location = new System.Drawing.Point(641, 114);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(91, 23);
+            this.btnStop.Size = new System.Drawing.Size(131, 43);
             this.btnStop.TabIndex = 1;
             this.btnStop.Text = "Stop";
-            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.UseVisualStyleBackColor = false;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(659, 31);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 23);
-            this.progressBar1.TabIndex = 4;
             // 
             // listViewSkills
             // 
@@ -94,9 +92,9 @@
             this.columnHeader2});
             this.listViewSkills.FullRowSelect = true;
             this.listViewSkills.HideSelection = false;
-            listViewItem2.StateImageIndex = 0;
+            listViewItem23.StateImageIndex = 0;
             this.listViewSkills.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem23});
             this.listViewSkills.Location = new System.Drawing.Point(15, 209);
             this.listViewSkills.Name = "listViewSkills";
             this.listViewSkills.Size = new System.Drawing.Size(338, 194);
@@ -133,33 +131,37 @@
             // labelTimer
             // 
             this.labelTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.86441F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTimer.Location = new System.Drawing.Point(639, 66);
+            this.labelTimer.Location = new System.Drawing.Point(480, 46);
             this.labelTimer.Name = "labelTimer";
             this.labelTimer.Size = new System.Drawing.Size(136, 38);
             this.labelTimer.TabIndex = 12;
-            this.labelTimer.Text = "01:00:00";
+            this.labelTimer.Text = "00:00:00";
             // 
-            // radioButton2
+            // rbtnSec
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(571, 129);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(106, 21);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Секундомер";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtnSec.AutoSize = true;
+            this.rbtnSec.Checked = true;
+            this.rbtnSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.762712F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rbtnSec.Location = new System.Drawing.Point(497, 87);
+            this.rbtnSec.Name = "rbtnSec";
+            this.rbtnSec.Size = new System.Drawing.Size(140, 24);
+            this.rbtnSec.TabIndex = 13;
+            this.rbtnSec.TabStop = true;
+            this.rbtnSec.Text = "Секундомер";
+            this.rbtnSec.UseVisualStyleBackColor = true;
+            this.rbtnSec.CheckedChanged += new System.EventHandler(this.rbtnSec_CheckedChanged);
             // 
-            // radioButton3
+            // rbtnTimer
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(571, 156);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(76, 21);
-            this.radioButton3.TabIndex = 14;
-            this.radioButton3.Text = "Таймер";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbtnTimer.AutoSize = true;
+            this.rbtnTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.762712F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rbtnTimer.Location = new System.Drawing.Point(497, 114);
+            this.rbtnTimer.Name = "rbtnTimer";
+            this.rbtnTimer.Size = new System.Drawing.Size(95, 24);
+            this.rbtnTimer.TabIndex = 14;
+            this.rbtnTimer.Text = "Таймер";
+            this.rbtnTimer.UseVisualStyleBackColor = true;
+            this.rbtnTimer.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // button4
             // 
@@ -242,21 +244,27 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Элемент";
             // 
-            // label3
+            // textBoxTimer
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(402, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "label3";
+            this.textBoxTimer.Enabled = false;
+            this.textBoxTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.20339F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxTimer.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBoxTimer.Location = new System.Drawing.Point(497, 148);
+            this.textBoxTimer.Mask = "00:00:00";
+            this.textBoxTimer.Name = "textBoxTimer";
+            this.textBoxTimer.Size = new System.Drawing.Size(100, 30);
+            this.textBoxTimer.TabIndex = 25;
+            this.textBoxTimer.Text = "000000";
+            this.textBoxTimer.ValidatingType = typeof(System.DateTime);
+            this.textBoxTimer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBoxTimer_MouseDown);
             // 
-            // Form1
+            // FormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 478);
-            this.Controls.Add(this.label3);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(800, 487);
+            this.Controls.Add(this.textBoxTimer);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
@@ -266,17 +274,16 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.rbtnTimer);
+            this.Controls.Add(this.rbtnSec);
             this.Controls.Add(this.labelTimer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listViewSkills);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStartStop);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormApp";
+            this.Text = "SkillTimeTracker";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -288,13 +295,12 @@
         private System.Windows.Forms.Button btnStartStop;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ListView listViewSkills;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelTimer;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rbtnSec;
+        private System.Windows.Forms.RadioButton rbtnTimer;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -306,7 +312,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox textBoxTimer;
     }
 }
 
